@@ -25,20 +25,50 @@ class _HomeState extends State<Home> {
 
 
   void _resetFields(){
-    weightcontroller.text ="";
-    heightcontroller.text= "";
-    _infotext = "Dados Resetados";
+    setState(() {
+      weightcontroller.text ="";
+      heightcontroller.text= "";
+      _infotext = "Dados Resetados";
+
+    });
+
   }
 
   void _Calculateimc(){
-    double weight = double.parse(weightcontroller.text);
-    double height = double.parse(heightcontroller.text) / 100;
-    double imc = weight / (height * height);
-    if(imc < 18.5){
-      print("Está Abaixo");
-    }
 
-  }
+    setState(() { // Mudança De Estado Ao apertar no botão
+      double weight = double.parse(weightcontroller.text);
+      double height = double.parse(heightcontroller.text) / 100;
+      double imc = weight / (height * height);
+
+      if(imc < 18.5){
+        _infotext = "Está Abaixo do Peso";
+      }
+      else if(imc >= 18.5 && imc <= 24.9)   {
+        _infotext = "Peso Está Normal";
+
+      }
+      else if (imc >= 25 && imc <=29.9){
+        _infotext = "Está com sobrePeso";
+      }
+      else if (imc >= 30 && imc <= 34.9){
+        _infotext = "Obesidade Grau 1";
+
+      }
+      else if (imc >= 35 && imc <= 39.9){
+        _infotext = "Obesidade Grau 2 ";
+      }
+      else{
+        _infotext = "Obesidade Grau 3" ;
+      }
+
+
+
+
+
+    });
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +80,7 @@ class _HomeState extends State<Home> {
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.refresh),
-              onPressed: () {}
+              onPressed: _resetFields,
             )
           ],
         ),
@@ -83,7 +113,7 @@ class _HomeState extends State<Home> {
                 child: Container(
                   height: 50.0,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: _Calculateimc,
                     child: Text(
                       "Calcular",
                       style: TextStyle(fontSize: 25.0),
