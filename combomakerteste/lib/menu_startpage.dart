@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'selectmoves_page.dart';
 
 ////////////////////////////////////////////////
 
@@ -32,7 +33,10 @@ class MenuStartPage extends StatelessWidget {
               padding: EdgeInsets.all(50.0),
 
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> SelectMovesTypesPage()));
+
+                },
                 child: Text(
                   "Cadastrar Movimentos",
                   style: TextStyle(fontSize: 20.0),

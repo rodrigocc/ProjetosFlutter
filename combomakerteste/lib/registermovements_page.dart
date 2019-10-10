@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
+
+
 class RegisterMovements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepOrange,
       appBar: AppBar(),
       body: Center(
         child: Column(
