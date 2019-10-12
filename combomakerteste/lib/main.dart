@@ -1,5 +1,5 @@
 //RodrigoAsi_
-
+import 'package:combomakerteste/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'menu_startpage.dart'; // Importando a File Criada para a classe Menu
 import 'dart:async';
@@ -36,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
       seconds: 3,
     ),(){
       Navigator.push(context, MaterialPageRoute(
-        builder: (context)=>MenuStartPage(),
+        builder: (context)=>LoginScreen(),
       ));
 
     }
