@@ -11,7 +11,6 @@ class RegisterFreesytleMovements extends StatelessWidget {
       body: Center(
 
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text("Quais Movimentos de Freestyle você Deseja Cadastrar?",

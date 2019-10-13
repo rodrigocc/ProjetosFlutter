@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'registermovements_page.dart';
-import 'registerfreestylemovements_page.dart';
-import 'registerpowermovements_page.dart';
+import 'registermovements_screen.dart';
+import 'registerfreestylemovements_screen.dart';
+import 'registerpowermovements_screen.dart';
 
 
 

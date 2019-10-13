@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'selectmoves_page.dart';
+import 'selectmoves_screen.dart';
+import 'combosview_screen.dart';
+import 'movementsview_screen.dart';
 
 ////////////////////////////////////////////////
 
@@ -47,7 +49,9 @@ class MenuStartPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(50.0),
               child:RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context) => MovementsViewScreen()));
+                },
                 child: Text(
                   "Ver Meus Movimentos ",
                   style: TextStyle(fontSize: 20.0),
@@ -59,7 +63,9 @@ class MenuStartPage extends StatelessWidget {
               padding: EdgeInsets.all(50.0),
               child:
               RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>CombosViewScreen()));
+                },
                 child: Text(
                   " Meus Combos  ",
                   style: TextStyle(

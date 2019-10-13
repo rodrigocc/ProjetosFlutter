@@ -13,8 +13,11 @@ class RegisterMovements extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Qual movimento você deseja Cadastrar?",style: TextStyle(fontSize: 20.0),),
+            Text("Qual movimento estático você deseja Cadastrar?:",style: TextStyle(fontSize: 20.0),),
             ListView(
+              children: <Widget>[
+
+              ],
             ),
             RaisedButton(
               child: Text(
