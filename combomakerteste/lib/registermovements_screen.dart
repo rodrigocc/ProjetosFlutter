@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 
-
-
 class RegisterMovements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,11 +12,6 @@ class RegisterMovements extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text("Qual movimento estático você deseja Cadastrar?:",style: TextStyle(fontSize: 20.0),),
-            ListView(
-              children: <Widget>[
-
-              ],
-            ),
             RaisedButton(
               child: Text(
                 "Cadastrar Movimentos",style: TextStyle(fontSize: 20.0),

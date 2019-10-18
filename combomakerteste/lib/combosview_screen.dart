@@ -7,6 +7,7 @@ class CombosViewScreen extends StatefulWidget {
 }
 
 class _CombosViewScreenState extends State<CombosViewScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,18 +16,11 @@ class _CombosViewScreenState extends State<CombosViewScreen> {
 
       ),
       body: Center(
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            ListView(
-              children: <Widget>[
-
-              ],
-            ),
-            FloatingActionButton(
-              onPressed: (){},
-            ),
 
           ],
 

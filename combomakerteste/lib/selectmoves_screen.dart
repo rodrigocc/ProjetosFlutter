@@ -20,7 +20,6 @@ class SelectMovesTypesPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text("Que Tipo de movimento você Deseja Cadastrar?",style: TextStyle(fontSize: 20.0),),
-
             RaisedButton(
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder:(context)=>RegisterMovements() ));
