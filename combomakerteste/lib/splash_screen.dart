@@ -36,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
           children: <Widget>[
             Image.asset("Images/Framesplash.png",fit:BoxFit.fill,height: 200.0,),
             Text("Street Workout Combos",style: TextStyle(
-              fontStyle: FontStyle.italic , fontSize: 35.0 ,fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic , fontSize: 30.0 ,fontWeight: FontWeight.bold,
               fontFamily: "Mansalva"
             ),),
           ],

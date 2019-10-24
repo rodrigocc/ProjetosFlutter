@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'catalogmovementslist_screen.dart';
+import 'catalogcomboslist_screen.dart';
+import 'selectmoves_screen.dart';
 
 
 
@@ -51,7 +52,7 @@ class _MovementsViewScreenState extends State<MovementsViewScreen> {
               child: FloatingActionButton(
                 child: Icon(Icons.add),
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>CatalogListMovements()));
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>SelectMovesTypesPage()));
 
                 },
               ),

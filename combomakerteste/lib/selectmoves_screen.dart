@@ -6,14 +6,19 @@ import 'registerpowermovements_screen.dart';
 
 
 class SelectMovesTypesPage extends StatelessWidget {
+
+
+
+
+
   @override
+
 
 
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightGreen,
       appBar: AppBar(
-
       ),
       body: Center(
         child: Column(
@@ -52,7 +57,6 @@ class SelectMovesTypesPage extends StatelessWidget {
               ),),
 
             ),
-
           ],),
       ),
 

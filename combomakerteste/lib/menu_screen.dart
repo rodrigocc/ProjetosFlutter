@@ -47,7 +47,7 @@ class MenuStartPage extends StatelessWidget {
             ),
 
             Padding(
-              padding: EdgeInsets.all(50.0),
+              padding: EdgeInsets.only(bottom: 20.0),
               child:RaisedButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder:(context) => MovementsViewScreen()));
@@ -60,7 +60,7 @@ class MenuStartPage extends StatelessWidget {
             ),
 
             Padding(
-              padding: EdgeInsets.all(50.0),
+              padding: EdgeInsets.only(bottom: 30,left: 50.0),
               child:
               RaisedButton(
                 onPressed: () {
