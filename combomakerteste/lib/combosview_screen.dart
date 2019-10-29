@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'catalogcomboslist_screen.dart';
+import 'comboselecttypes_screen.dart';
 
 
 class CombosViewScreen extends StatefulWidget {
@@ -46,7 +47,7 @@ class _CombosViewScreenState extends State<CombosViewScreen> {
               child: FloatingActionButton(
                 child: Icon(Icons.add),
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>CatalogListMovements()));
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>(CombosSelectType())));
 
                 },
               ),
