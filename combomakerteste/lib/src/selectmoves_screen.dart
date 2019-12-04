@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'registermovements_screen.dart';
-import 'registerfreestylemovements_screen.dart';
-import 'registerpowermovements_screen.dart';
+import 'cadastros/registermovements_screen.dart';
+import 'cadastros/registerfreestylemovements_screen.dart';
+import 'cadastros/registerpowermovements_screen.dart';
+
 
 
 
 class SelectMovesTypesPage extends StatelessWidget {
 
-
-
-
-
   @override
-
-
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightGreen,

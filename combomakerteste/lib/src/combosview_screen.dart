@@ -1,47 +1,42 @@
 import 'package:flutter/material.dart';
-import 'catalogcomboslist_screen.dart';
-import 'selectmoves_screen.dart';
+import 'catalogs/catalogcomboslist_screen.dart';
+import 'comboselecttypes_screen.dart';
 
 
-
-
-
-class MovementsViewScreen extends StatefulWidget {
+class CombosViewScreen extends StatefulWidget {
   @override
-  _MovementsViewScreenState createState() => _MovementsViewScreenState();
+  _CombosViewScreenState createState() => _CombosViewScreenState();
 }
 
+class _CombosViewScreenState extends State<CombosViewScreen> {
 
-class _MovementsViewScreenState extends State<MovementsViewScreen> {
+  List _listcombos = [];
 
-  List _ListMovements = [""]; //Criando uma Lista Vazia
-
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue,
-      appBar:AppBar(
+      appBar: AppBar(
+
       ),
-      body:Center(
-        child:Column(
+      body: Center(
+
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
               child: ListView.builder(
-                  padding: EdgeInsets.only(top:10.0),
-                  itemCount: _ListMovements.length, // pegando o tamanho da lista
-                  itemBuilder :(context,index){
+                  padding: EdgeInsets.only(top: 10.0),
+                  itemCount: _listcombos.length,
+                  itemBuilder: (context,index){
                     return Row(
                       children: <Widget>[
-                        TextField(
-                        ),
+                        Icon(Icons.find_in_page),
 
                       ],
-
                     );
-
                   }
               ),
 
@@ -52,17 +47,25 @@ class _MovementsViewScreenState extends State<MovementsViewScreen> {
               child: FloatingActionButton(
                 child: Icon(Icons.add),
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>SelectMovesTypesPage()));
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>(CombosSelectType())));
 
                 },
               ),
             ),
 
-          ],
-        ) ,
-      ),
 
+
+
+          ],
+
+        ),
+
+      ),
 
     );
   }
 }
+
+
+
+

@@ -1,9 +1,9 @@
 //RodrigoAsi_
-import 'package:combomakerteste/login_screen.dart';
+import 'package:combomakerteste/src/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'menu_screen.dart'; // Importando a File Criada para a classe Menu
+import 'src/menu_screen.dart'; // Importando a File Criada para a classe Menu
 import 'dart:async';
-import 'splash_screen.dart';
+import 'src/splash_screen.dart';
 
 //////////////////////////////////////MAIN////////////////////////////////////////////////
 

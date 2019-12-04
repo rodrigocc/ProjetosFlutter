@@ -34,8 +34,8 @@ class _SplashPageState extends State<SplashPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset("Images/Framesplash.png",fit:BoxFit.fill,height: 200.0,),
-            Text("Street Workout Combos",style: TextStyle(
+            Image.asset("images/Kongsplash.png",fit:BoxFit.fill,height: 200.0,),
+            Text("Calisthenics Combos",style: TextStyle(
               fontStyle: FontStyle.italic , fontSize: 30.0 ,fontWeight: FontWeight.bold,
               fontFamily: "Mansalva"
             ),),
