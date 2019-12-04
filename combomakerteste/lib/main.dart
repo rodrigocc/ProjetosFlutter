@@ -12,13 +12,13 @@ void main(){
 
   runApp(MaterialApp(
     home: SplashPage(),
+    debugShowCheckedModeBanner: false,
 
   ),
   );
   
 }
 
-///////////////////////////////////CLASSE DA SPLASH SCREEN ///// /////////////////////////////////////
 
 
 
