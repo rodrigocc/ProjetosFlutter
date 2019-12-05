@@ -6,6 +6,8 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
+
+
       backgroundColor: Colors.white,
       body: Center(
         child: SingleChildScrollView(
@@ -19,7 +21,10 @@ class LoginScreen extends StatelessWidget {
               ),
 
               Text(
-                "Calisthenics Combos",
+                "Calisthenics Combos",style: TextStyle(fontStyle: FontStyle.normal,fontSize: 25.0,
+                fontWeight: FontWeight.bold,fontFamily: "Mansalva",
+
+              ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -37,10 +42,15 @@ class LoginScreen extends StatelessWidget {
 
               Padding(
                 padding: EdgeInsets.only(top: 10.0, left: 200.0),
-                child: Text(
-                  "FORGOT YOU PASSWORD ?",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 9.0),
+                child: InkWell(
+                  child: Text(
+                    "FORGOT YOU PASSWORD ?",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 9.0),
+                  ),
+                  onTap: (){},
                 ),
+
+
               ),
 
               SizedBox(
@@ -61,33 +71,64 @@ class LoginScreen extends StatelessWidget {
                   },
                 ),
               ),
+              Row(children: <Widget>[
+                Expanded(
+                  child: new Container(
+                      margin: const EdgeInsets.only(left: 10.0, right: 20.0),
+                      child: Divider(
+                        color: Colors.black,
+                        height: 36,
+                      )),
+                ),
+                Text("Or Connect with"),
+                Expanded(
+                  child: new Container(
+                      margin: const EdgeInsets.only(left: 20.0, right: 10.0),
+                      child: Divider(
+                        color: Colors.black,
+                        height: 36,
+                      )),
+                ),
+              ]),
 
-//
+
+
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+
+
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
                       width: 150.0,
                       height: 30.0,
                       child: RaisedButton(
-                        color: Colors.blue,
+                        color: Color(0xFF395185),
                         splashColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
                         ),
-                        child: Text(
-                          "FACEBOOK",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                        child:Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+
+                            Image.asset("icons/facebook.png",width: 25.0,height: 25.0,),
+
+                            Text(
+                              "FACEBOOK",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                         onPressed: () {},
                       ),
                     ),
                   ),
+                  
                   SizedBox(
                     width: 150.0,
                     height: 30.0,
@@ -97,13 +138,23 @@ class LoginScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child: Text(
-                        "GOOGLE",
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
+                      child:Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Image.asset("icons/google.png",width: 25.0,height: 25.0,),
+
+                          Text(
+                            "GOOGLE",
+                            style: TextStyle(
+                                color: Colors.white, fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+
+                        ],
+
                       ),
-                      onPressed: () {},
+                      onPressed: (){},
+
                     ),
                   ),
                 ],
