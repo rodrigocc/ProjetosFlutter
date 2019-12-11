@@ -5,7 +5,7 @@ class CombosSelectType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Tipos de Combo"),
       ),
@@ -15,7 +15,14 @@ class CombosSelectType extends StatelessWidget {
           children: <Widget>[
             RaisedButton(
             onPressed: (){},
-              child: Text("Dinâmico De Força",style: TextStyle(fontSize: 10),),
+              child: Stack(
+                children: <Widget>[
+                  Image.asset("images/StaticButton.png",fit: BoxFit.cover,),
+                  Text("Teste")
+
+                ],
+
+              ),
 
 
             ),

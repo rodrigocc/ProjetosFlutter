@@ -1,3 +1,5 @@
+import 'package:combomakerteste/widgets/appbar.dart';
+import 'package:combomakerteste/widgets/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
 import 'catalogs/catalogcomboslist_screen.dart';
 import 'selectmoves_screen.dart';
@@ -20,43 +22,16 @@ class _MovementsViewScreenState extends State<MovementsViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
-      appBar:AppBar(
-      ),
+      backgroundColor: Colors.white,
+      appBar:buildAppBar(),
+      bottomNavigationBar: buildBottomNavigation(context),
+
       body:Center(
         child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Expanded(
-              child: ListView.builder(
-                  padding: EdgeInsets.only(top:10.0),
-                  itemCount: _ListMovements.length, // pegando o tamanho da lista
-                  itemBuilder :(context,index){
-                    return Row(
-                      children: <Widget>[
-                        TextField(
-                        ),
 
-                      ],
-
-                    );
-
-                  }
-              ),
-
-            ),
-
-            Padding(
-              padding: EdgeInsets.only(bottom: 20.0),
-              child: FloatingActionButton(
-                child: Icon(Icons.add),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>SelectMovesTypesPage()));
-
-                },
-              ),
-            ),
 
           ],
         ) ,

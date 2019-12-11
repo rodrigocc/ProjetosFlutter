@@ -1,3 +1,5 @@
+import 'package:combomakerteste/widgets/appbar.dart';
+import 'package:combomakerteste/widgets/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
 import 'catalogs/catalogcomboslist_screen.dart';
 import 'comboselecttypes_screen.dart';
@@ -16,10 +18,10 @@ class _CombosViewScreenState extends State<CombosViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
-      appBar: AppBar(
-
+      backgroundColor: Colors.white,
+      appBar: buildAppBar(
       ),
+      bottomNavigationBar: buildBottomNavigation(context),
       body: Center(
 
         child: Column(
@@ -42,16 +44,7 @@ class _CombosViewScreenState extends State<CombosViewScreen> {
 
             ),
 
-            Padding(
-              padding: EdgeInsets.only(bottom: 20.0),
-              child: FloatingActionButton(
-                child: Icon(Icons.add),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>(CombosSelectType())));
 
-                },
-              ),
-            ),
 
 
 

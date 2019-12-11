@@ -4,7 +4,7 @@ class CatalogListMovements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: (Text("Catalogo de Movimentos")),
       ),
@@ -19,23 +19,23 @@ class CatalogListMovements extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8),
               child: const Text("Back Lever"),
-              color: Colors.deepOrange,
+              color: Colors.black,
 
             ),
             Container(
               padding: const EdgeInsets.all(8),
               child: const Text("Front Lever"),
-              color: Colors.deepOrange,
+              color: Colors.black,
             ),
             Container(
               padding: const EdgeInsets.all(8),
               child: const Text("Hefesto"),
-              color: Colors.deepPurple,
+              color: Colors.black,
             ),
             Container(
               padding: const EdgeInsets.all(8),
               child: const Text("Planche"),
-              color: Colors.green,
+              color: Colors.black,
 
             ),
 

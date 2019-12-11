@@ -1,3 +1,5 @@
+import 'package:combomakerteste/widgets/appbar.dart';
+import 'package:combomakerteste/widgets/bottomnavigationbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -10,73 +12,82 @@ import 'movementsview_screen.dart';
 class MenuStartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Image.asset(
-          "Images/MenuStartTeste.png",
-          fit: BoxFit.cover,
-          height: 1000.0,
-          width: 1000.0,
-        ),
-        Column(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: buildAppBar(),
+      bottomNavigationBar: buildBottomNavigation(context),
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(bottom: 100.0,top: 100.0,left: 80.0),
-              child:Text(
-                "Bem Vindo Seu Nome",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                ),
-              ) ,
-            ),
-            Padding(
-              padding: EdgeInsets.all(50.0),
-
-              child: RaisedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> SelectMovesTypesPage()));
-
-                },
-                child: Text(
-                  "Cadastrar Movimentos",
-                  style: TextStyle(fontSize: 20.0),
-                ),
+            Text(
+              "Bem Vindo JacintoPinto",
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 20.0,
               ),
             ),
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: Stack(
+                children: <Widget>[
+                  InkWell(
+                    child: Image.asset(
+                      "images/ContainerMenuInicial.png",
 
-            Padding(
-              padding: EdgeInsets.only(bottom: 20.0),
-              child:RaisedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context) => MovementsViewScreen()));
-                },
-                child: Text(
-                  "Ver Meus Movimentos ",
-                  style: TextStyle(fontSize: 20.0),
-                ),
-              ) ,
-            ),
-
-            Padding(
-              padding: EdgeInsets.only(bottom: 30,left: 50.0),
-              child:
-              RaisedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>CombosViewScreen()));
-                },
-                child: Text(
-                  " Meus Combos  ",
-                  style: TextStyle(
-                    fontSize: 20.0,
+                    ),
+                    onTap: (){},
+                    splashColor:Colors.transparent ,
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 120.0,top: 150.0),
+                    child: Text(
+                      "Rankings",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontFamily: "Roboto",
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(
+              color: Colors.transparent,
+            ),
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: Stack(
+                children: <Widget>[
+                  InkWell(
+                    child: Image.asset("images/CardButtonMenuNew.png",),
+                    splashColor: Colors.transparent,
+                    onTap: () {},
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 90.0,top: 150.0),
+                    child: Text(
+                      "Meus Combos",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontFamily: "Roboto",
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 }

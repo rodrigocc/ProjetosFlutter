@@ -1,3 +1,4 @@
+import 'package:combomakerteste/widgets/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
 
 
@@ -5,10 +6,11 @@ class RegisterPowerMovements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Colors.white,
       appBar: AppBar(
 
       ),
+      bottomNavigationBar: buildBottomNavigation(context),
       body: Center(
 
         child: Column(
