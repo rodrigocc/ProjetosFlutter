@@ -19,7 +19,7 @@ class _CombosViewScreenState extends State<CombosViewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(
+      appBar: buildAppBar(""
       ),
       bottomNavigationBar: buildBottomNavigation(context),
       body: Center(

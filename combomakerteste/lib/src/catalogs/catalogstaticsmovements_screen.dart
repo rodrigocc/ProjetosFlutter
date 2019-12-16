@@ -14,18 +14,27 @@ class _StaticListState extends State<StaticList> {
 
 
 
+
+
+
+
+
+
+
+
   int _current = 0;
   var imgList = [
-  "https://cdn.gmb.io/wp-content/uploads/2016/12/alkavadlo-14.jpg"
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXg3ZAYjf1HCrwozMA43IL_NubWTlw-vAh8iOATXuc8SNNHobg&s"
-  "https://live.staticflickr.com/915/41304453960_2f0c237fb9_b.jpg"
+    "https://www.wallpapermaiden.com/wallpaper/22750/download/1366x768/flat-landscape-minimalism-trees-sunset-river-artwork.jpeg",
+    "https://wallpaperhd.wiki/wp-content/uploads/wall-paper-1366-x-768-370157.jpg",
+    "https://s1.1zoom.me/b5050/764/292819-blackangel_1366x768.jpg",
+
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(),
+      appBar: buildAppBar(""),
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +52,6 @@ class _StaticListState extends State<StaticList> {
 
               },
 
-
               items: imgList.map((imgUrl){
                 return Builder(
                   builder: (BuildContext context){
@@ -53,8 +61,10 @@ class _StaticListState extends State<StaticList> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
                         color: Colors.blueGrey,
+
+
                       ),
-                      child: Image.network(imgUrl,fit: BoxFit.cover,)
+                      child: Image.network(imgUrl,fit: BoxFit.fill,)
 
 
                     );

@@ -16,7 +16,7 @@ class MenuStartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(),
+      appBar: buildAppBar("MENU"),
       bottomNavigationBar: buildBottomNavigation(context),
       body: Center(
         child: Column(

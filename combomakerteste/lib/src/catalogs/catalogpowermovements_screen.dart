@@ -10,7 +10,7 @@ class _PowerMovementsListState extends State<PowerMovementsList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(""),
       backgroundColor: Colors.white,
       body: Center(
         child: Column(

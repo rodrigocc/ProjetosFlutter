@@ -23,7 +23,7 @@ class _MovementsViewScreenState extends State<MovementsViewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar:buildAppBar(),
+      appBar:buildAppBar("Meus Movimentos"),
       bottomNavigationBar: buildBottomNavigation(context),
 
       body:Center(

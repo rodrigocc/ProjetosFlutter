@@ -17,7 +17,7 @@ class SelectMovesTypesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(
+      appBar: buildAppBar("Categorias"
       ),
       bottomNavigationBar: buildBottomNavigation(context),
 
