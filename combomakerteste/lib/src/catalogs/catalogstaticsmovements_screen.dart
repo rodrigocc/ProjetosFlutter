@@ -16,8 +16,8 @@ class _StaticListState extends State<StaticList> {
 
   int _current = 0;
   var imgList = [
-  "https://cdn.gmb.io/wp-content/uploads/2016/12/alkavadlo-14.jpg"
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXg3ZAYjf1HCrwozMA43IL_NubWTlw-vAh8iOATXuc8SNNHobg&s"
+  "https://cdn.gmb.io/wp-content/uploads/2016/12/alkavadlo-14.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXg3ZAYjf1HCrwozMA43IL_NubWTlw-vAh8iOATXuc8SNNHobg&s",
   "https://live.staticflickr.com/915/41304453960_2f0c237fb9_b.jpg"
   ];
 
@@ -53,8 +53,14 @@ class _StaticListState extends State<StaticList> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
                         color: Colors.blueGrey,
+                        // image: DecorationImage(
+                        //   image: NetworkImage(imgUrl)
+                        // )
                       ),
-                      child: Image.network(imgUrl,fit: BoxFit.cover,)
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15.0),
+                        child: Image.network(imgUrl,fit: BoxFit.cover,),
+                      )
 
 
                     );
