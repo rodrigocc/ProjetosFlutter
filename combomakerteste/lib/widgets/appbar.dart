@@ -8,7 +8,7 @@
 
 
 
-    title: Image.asset("images/Kong.png"),
+    title: Image.asset("images/KongWhite.png"),
     flexibleSpace: Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(

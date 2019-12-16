@@ -1,3 +1,5 @@
+import 'package:combomakerteste/menubuttons/mycombosbutton_screen.dart';
+import 'package:combomakerteste/menubuttons/rankingsbutton_screen.dart';
 import 'package:combomakerteste/widgets/appbar.dart';
 import 'package:combomakerteste/widgets/bottomnavigationbar.dart';
 import 'package:flutter/cupertino.dart';
@@ -38,7 +40,10 @@ class MenuStartPage extends StatelessWidget {
                       "images/ContainerMenuInicial.png",
 
                     ),
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>RankingsScreen()));
+
+                    },
                     splashColor:Colors.transparent ,
                   ),
                   Padding(
@@ -68,7 +73,9 @@ class MenuStartPage extends StatelessWidget {
                   InkWell(
                     child: Image.asset("images/CardButtonMenuNew.png",),
                     splashColor: Colors.transparent,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>MycombosScreen()));
+                    },
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 90.0,top: 150.0),
