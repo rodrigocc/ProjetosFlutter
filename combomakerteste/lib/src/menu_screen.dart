@@ -16,14 +16,14 @@ class MenuStartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar("MENU"),
+      appBar: buildAppBar("Menu"),
       bottomNavigationBar: buildBottomNavigation(context),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Bem Vindo JacintoPinto",
+              "Bem Vindo Thomas Turbando",
               style: TextStyle(
                 color: Colors.black87,
                 fontSize: 20.0,
