@@ -4,9 +4,6 @@ import 'package:combomakerteste/src/catalogs/catalogstaticsmovements_screen.dart
 import 'package:combomakerteste/widgets/appbar.dart';
 import 'package:combomakerteste/widgets/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
-import 'cadastros/registermovements_screen.dart';
-import 'cadastros/registerfreestylemovements_screen.dart';
-import 'cadastros/registerpowermovements_screen.dart';
 
 
 

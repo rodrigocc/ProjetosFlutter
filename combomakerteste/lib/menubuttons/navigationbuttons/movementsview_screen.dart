@@ -1,8 +1,7 @@
 import 'package:combomakerteste/widgets/appbar.dart';
 import 'package:combomakerteste/widgets/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
-import 'catalogs/catalogcomboslist_screen.dart';
-import 'selectmoves_screen.dart';
+
 
 
 

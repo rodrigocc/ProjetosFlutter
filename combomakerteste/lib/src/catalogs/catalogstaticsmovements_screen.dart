@@ -28,7 +28,7 @@ class _StaticListState extends State<StaticList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(""),
+      appBar: buildAppBar("ESTÁTICOS"),
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

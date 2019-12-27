@@ -1,9 +1,10 @@
-import 'package:combomakerteste/src/combosview_screen.dart';
+
 import 'package:combomakerteste/src/menu_screen.dart';
-import 'package:combomakerteste/src/movementsview_screen.dart';
-import 'package:combomakerteste/src/selectmoves_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_bottom_navigation_bar/gradient_bottom_navigation_bar.dart';
+import 'package:combomakerteste/menubuttons/navigationbuttons/movementsview_screen.dart';
+import 'package:combomakerteste/menubuttons/navigationbuttons/selectmoves_screen.dart';
+import 'package:combomakerteste/menubuttons/navigationbuttons/settings/settingsbutton_screen.dart';
 
 Widget buildBottomNavigation(context) {
 
@@ -30,10 +31,10 @@ Widget buildBottomNavigation(context) {
             break;
           case 2:
 
-            Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>CombosViewScreen()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>MovementsViewScreen()));
            break;
           case 3:
-            Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>MovementsViewScreen() ));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>SettingsScreen() ));
             break;
           case 4:
 

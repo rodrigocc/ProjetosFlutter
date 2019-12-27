@@ -1,13 +1,30 @@
 import 'package:combomakerteste/src/menu_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+
+
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+
+  TextEditingController _emailcontroller, _passwordcontroller;
+
+  @override
+  void initState() {
+
+    _emailcontroller = new TextEditingController();
+    _passwordcontroller = new TextEditingController();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
-
       backgroundColor: Colors.white,
       body: Center(
         child: SingleChildScrollView(
@@ -29,7 +46,9 @@ class LoginScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
-                  decoration: InputDecoration(hintText: "Username :"),
+                  decoration: InputDecoration(hintText: "Email"),
+                  controller: _emailcontroller,
+
                 ),
               ),
 
@@ -37,6 +56,8 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
                   decoration: InputDecoration(hintText: "Password :"),
+                  controller: _passwordcontroller,
+
                 ),
               ),
 
@@ -66,6 +87,7 @@ class LoginScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
+                    FirebaseAuth.instance.signInWithEmailAndPassword(email:_emailcontroller.text, password: _passwordcontroller.text);
                     Navigator.push(context,
                         MaterialPageRoute(builder: (Context) => MenuStartPage()));
                   },
@@ -128,7 +150,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
+
                   SizedBox(
                     width: 150.0,
                     height: 30.0,
