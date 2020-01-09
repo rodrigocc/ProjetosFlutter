@@ -73,26 +73,27 @@ flutter:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
   assets:
-    - images/KongWhite.png
-    - images/PowerButton.png
-    - images/FreestyleNew.png
-    - images/StaticButton.png
-    - images/Categorystatic.png
-    - images/CategoryPower.png
-    - images/CategoryFreestyle.png
-    - images/CardButtonMenuNew.png
-    - images/CardButtonMenu.png
-    - images/ContainerMenuInicial.png
-    - icons/homeicon.png
-    - icons/ranks.png
-    - icons/settingsicon.png
-    - icons/bar.png
-    - icons/google.png
-    - icons/facebook.png
-    - Framesplash.png
-    - MenuStartTeste.png
-    - Kongsplash.png
-    - Kong.png
+    - images/
+    # - images/KongWhite.png
+    # - images/PowerButton.png
+    # - images/FreestyleNew.png
+    # - images/StaticButton.png
+    # - images/Categorystatic.png
+    # - images/CategoryPower.png
+    # - images/CategoryFreestyle.png
+    # - images/CardButtonMenuNew.png
+    # - images/CardButtonMenu.png
+    # - images/ContainerMenuInicial.png
+    # - icons/homeicon.png
+    # - icons/ranks.png
+    # - icons/settingsicon.png
+    # - icons/bar.png
+    # - icons/google.png
+    # - icons/facebook.png
+    # - Framesplash.png
+    # - MenuStartTeste.png
+    # - Kongsplash.png
+    # - Kong.png
       # An image asset can refer to one or more resolution-specific "variants", see
       # https://flutter.dev/assets-and-images/#resolution-aware.
 
