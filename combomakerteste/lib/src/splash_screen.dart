@@ -14,13 +14,14 @@ class _SplashPageState extends State<SplashPage> {
         Duration(
           seconds: 3,
         ), () {
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => LoginScreen(),
           ));
     });
   }
+
 
   @override
   Widget build(BuildContext context) {

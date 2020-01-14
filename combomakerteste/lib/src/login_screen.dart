@@ -30,14 +30,14 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     if (!_isLoading) {
       return Scaffold(
-            key: _scaffoldKey,
-            backgroundColor: Colors.white,
-            body: _buildBody(context, _buttonLogin(context, "LOGIN")));
+          key: _scaffoldKey,
+          backgroundColor: Colors.white,
+          body: _buildBody(context, _buttonLogin(context, "LOGIN")));
     } else {
       return Scaffold(
-            key: _scaffoldKey,
-            backgroundColor: Colors.white,
-            body: _buildBody(context, _buildProgress(context)));
+          key: _scaffoldKey,
+          backgroundColor: Colors.white,
+          body: _buildBody(context, _buildProgress(context)));
     }
   }
 
@@ -82,6 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextField(
                 decoration: InputDecoration(hintText: "Password :"),
                 controller: _passwordcontroller,
+                obscureText: true,
               ),
             ),
             Padding(
@@ -195,20 +196,20 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _showAlert(label) {
     _scaffoldKey.currentState.showSnackBar(
-      SnackBar(
-        duration: Duration(
-          seconds: 2,
-        ),
-        backgroundColor: Colors.indigo,
-        content: Text(
-          label,
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: 14.0,
-              fontWeight: FontWeight.bold,
-              fontFamily: "GoogleSansMedium"),
-        ),
-      )
+        SnackBar(
+          duration: Duration(
+            seconds: 2,
+          ),
+          backgroundColor: Colors.indigo,
+          content: Text(
+            label,
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 14.0,
+                fontWeight: FontWeight.bold,
+                fontFamily: "GoogleSansMedium"),
+          ),
+        )
     );
   }
 

@@ -3,6 +3,8 @@ import 'package:combomakerteste/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:combomakerteste/widgets/bottomnavigationbar.dart';
 import 'adjustement_screen.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 
 
@@ -23,7 +25,9 @@ class SettingsScreen extends StatelessWidget {
               child: CircleAvatar(
                 maxRadius: 80.0,
                 backgroundColor: Colors.deepOrange,
-
+                child: FlatButton.icon(
+                  onPressed: (){},
+                )
               ),
             ),
             Text("SEU NOME"),
