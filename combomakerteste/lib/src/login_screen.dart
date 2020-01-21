@@ -1,9 +1,9 @@
 import 'dart:io';
-
 import 'package:combomakerteste/src/menu_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:combomakerteste/services/google_sign_firebase.dart';
+import "package:flutter/services.dart";
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -95,7 +95,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 onTap: () {},
               ),
             ),
-            Divider(color: Colors.transparent,),
+            Divider(
+              color: Colors.transparent,
+            ),
             widget,
             Row(children: <Widget>[
               Expanded(
@@ -147,7 +149,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ],
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        final googleSignIn = signInWithGoogle();
+                        googleSignIn.whenComplete(() {
+                          print("Acessado");
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MenuStartPage()));
+                        });
+
+                      },
                     ),
                   ),
                 ),
@@ -195,22 +207,20 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _showAlert(label) {
-    _scaffoldKey.currentState.showSnackBar(
-        SnackBar(
-          duration: Duration(
-            seconds: 2,
-          ),
-          backgroundColor: Colors.indigo,
-          content: Text(
-            label,
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 14.0,
-                fontWeight: FontWeight.bold,
-                fontFamily: "GoogleSansMedium"),
-          ),
-        )
-    );
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      duration: Duration(
+        seconds: 2,
+      ),
+      backgroundColor: Colors.indigo,
+      content: Text(
+        label,
+        style: TextStyle(
+            color: Colors.white,
+            fontSize: 14.0,
+            fontWeight: FontWeight.bold,
+            fontFamily: "GoogleSansMedium"),
+      ),
+    ));
   }
 
   Widget _buttonLogin(context, label) {

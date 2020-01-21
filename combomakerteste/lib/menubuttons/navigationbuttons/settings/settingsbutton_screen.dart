@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:combomakerteste/src/login_screen.dart';
 import 'package:combomakerteste/widgets/appbar.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +25,29 @@ class SettingsScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: CircleAvatar(
                 maxRadius: 80.0,
-                backgroundColor: Colors.deepOrange,
-                child: FlatButton.icon(
-                  onPressed: (){},
-                )
+                backgroundColor: Colors.blue,
+                child: IconButton(
+                  icon: Image.asset("icons/perfil.png",color: Colors.white,) ,
+                  onPressed: ()async{
+                    final File imgFile = await ImagePicker.pickImage(source: ImageSource.camera);
+                    if(imgFile != null){
+                      StorageUploadTask task = FirebaseStorage.instance.ref().child(
+                        DateTime.now().millisecondsSinceEpoch.toString()
+                      ).putFile(imgFile);
+                      StorageTaskSnapshot taskSnapshot =  await task.onComplete;
+                      String url = await taskSnapshot.ref.getDownloadURL();
+                      print(url);
+
+                    }
+
+                    
+                  },
+                  splashColor: Colors.white,
+                  iconSize: 50.0,
+
+
+                ),
+
               ),
             ),
             Text("SEU NOME"),
