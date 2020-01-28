@@ -50,13 +50,21 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: fonts/Montserrat-Regular.ttf
-    - family:
+    - family: Roboto
       fonts:
         - asset: fonts/Roboto-Regular.ttf
+    - family: Comfortaa
+      fonts:
+          - asset: fonts/Comfortaa-Regular.ttf
 
   uses-material-design: true
 
   assets:
+    - images/gorilanew.png
+    - images/Imagemteste.png
+    - images/ImageAppBar.png
+    - images/AppbarImageKong.png
+    - images/AppbarImage.png
     - images/KongWhite.png
     - images/PowerButton.png
     - images/FreestyleNew.png
@@ -78,6 +86,7 @@ flutter:
     - MenuStartTeste.png
     - Kongsplash.png
     - Kong.png
+
       # An image asset can refer to one or more resolution-specific "variants", see
       # https://flutter.dev/assets-and-images/#resolution-aware.
 

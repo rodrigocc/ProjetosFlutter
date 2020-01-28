@@ -15,7 +15,7 @@ class SettingsScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar("Configurações"),
+      appBar: buildAppBar("Configurações",false),
       bottomNavigationBar: buildBottomNavigation(context),
       body: Center(
         child: Column(

@@ -13,7 +13,7 @@ class MenuStartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar("Menu"),
+      appBar: buildAppBar("Menu",false),
       bottomNavigationBar: buildBottomNavigation(context),
       body: Center(
         child: Column(
@@ -24,6 +24,7 @@ class MenuStartPage extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black87,
                 fontSize: 20.0,
+                fontFamily: "Comfortaa"
               ),
             ),
             Card(
