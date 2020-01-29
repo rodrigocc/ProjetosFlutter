@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "783231961604",
+    "firebase_url": "https://calisthenicscombos.firebaseio.com",
+    "project_id": "calisthenicscombos",
+    "storage_bucket": "calisthenicscombos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783231961604:android:5232c03351df1deb74c351",
+        "android_client_info": {
+          "package_name": "br.com.araujo.combomakerteste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783231961604-h2nvfbe58q57gi4p51ucs6h8qrbcnifv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.araujo.combomakerteste",
+            "certificate_hash": "99fc2b6feb0c30b090cf147c63fea89593ca5a1a"
+          }
+        },
+        {
+          "client_id": "783231961604-5lpf68mnshre24igt73m3ql027p84cds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9_7sq5DQElYxxp19uGQS5SfHnxEji8G4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783231961604-5lpf68mnshre24igt73m3ql027p84cds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

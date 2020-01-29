@@ -1,8 +1,9 @@
 import 'dart:io';
+import 'package:combomakerteste/services/facebook_sign_firebase.dart';
+import 'package:combomakerteste/services/google_sign_firebase.dart';
 import 'package:combomakerteste/src/menu_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:combomakerteste/services/google_sign_firebase.dart';
 import "package:flutter/services.dart";
 
 class LoginScreen extends StatefulWidget {
@@ -16,11 +17,12 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isLoading;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
-    _emailcontroller = new TextEditingController();
-    _passwordcontroller = new TextEditingController();
+    _emailcontroller = TextEditingController();
+    _passwordcontroller = TextEditingController();
     _isLoading = false;
 
     super.initState();
@@ -51,6 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildBody(context, widget) {
     return Container(
+      padding: EdgeInsets.all(15.0),
       alignment: Alignment.center,
       child: SingleChildScrollView(
         child: Column(
@@ -71,49 +74,61 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10.0),
               child: TextField(
                 decoration: InputDecoration(hintText: "Email"),
                 controller: _emailcontroller,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10.0),
               child: TextField(
-                decoration: InputDecoration(hintText: "Password :"),
+                decoration: InputDecoration(hintText: "Password"),
                 controller: _passwordcontroller,
                 obscureText: true,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 10.0, left: 200.0),
-              child: InkWell(
-                child: Text(
-                  "FORGOT YOU PASSWORD ?",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 9.0),
-                ),
-                onTap: () {},
               ),
             ),
             Divider(
               color: Colors.transparent,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Padding(
+                    padding: EdgeInsets.only(right: 10.0),
+                    child: InkWell(
+                      child: Text(
+                        "FORGOT YOU PASSWORD ?",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 9.0),
+                      ),
+                      onTap: () {},
+                    ))
+              ],
+            ),
+            Divider(
+              color: Colors.transparent,
+            ),
             widget,
+            Divider(
+              color: Colors.transparent,
+              height: 50.0,
+            ),
             Row(children: <Widget>[
               Expanded(
-                child: new Container(
-                    margin: const EdgeInsets.only(left: 10.0, right: 20.0),
+                child: Container(
+                    margin: EdgeInsets.only(right: 20.0),
                     child: Divider(
-                      color: Colors.black,
+                      color: Colors.blueGrey,
                       height: 36,
                     )),
               ),
               Text("Or Connect with"),
               Expanded(
-                child: new Container(
-                    margin: const EdgeInsets.only(left: 20.0, right: 10.0),
+                child: Container(
+                    margin: const EdgeInsets.only(left: 20.0),
                     child: Divider(
-                      color: Colors.black,
+                      color: Colors.blueGrey,
                       height: 36,
                     )),
               ),
@@ -149,16 +164,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ],
                       ),
-                      onPressed: () {
-                        final googleSignIn = signInWithGoogle();
-                        googleSignIn.whenComplete(() {
-                          print("Acessado");
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MenuStartPage()));
-                        });
-
+                      onPressed: () async {
+                        _checkUser(await signInWithFacebook());
                       },
                     ),
                   ),
@@ -188,7 +195,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ],
                     ),
-                    onPressed: () {},
+                    onPressed: () async {
+                      _changeProgress(true);
+                      _checkUser(await signInWithGoogle());
+                    },
                   ),
                 ),
               ],
@@ -199,7 +209,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Future<FirebaseUser> _loginWithFirebase(email, password) async {
+  Future<FirebaseUser> _loginWithEmail(email, password) async {
     AuthResult result = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: password);
 
@@ -239,11 +249,11 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         onPressed: () async {
           try {
-            _changeButtonState(true);
+            _changeProgress(true);
 
             if (_emailcontroller.text.isNotEmpty &&
                 _passwordcontroller.text.isNotEmpty) {
-              FirebaseUser firebaseUser = await _loginWithFirebase(
+              FirebaseUser firebaseUser = await _loginWithEmail(
                   _emailcontroller.text, _passwordcontroller.text);
 
               if (firebaseUser.uid != null) {
@@ -252,36 +262,53 @@ class _LoginScreenState extends State<LoginScreen> {
               }
             }
 
-            _changeButtonState(false);
+            _changeProgress(false);
           } on PlatformException catch (error) {
             _showAlert(error.code);
             if (Platform.isAndroid) {
               if (error.code == "ERROR_INVALID_EMAIL") {
-                _changeButtonState(false);
+                _changeProgress(false);
                 _buttonLogin(context, "LOGIN");
                 print("Email Incorreto");
               }
 
               if (error.code == "ERROR_WRONG_PASSWORD") {
-                _changeButtonState(false);
+                _changeProgress(false);
                 print("Senha Incorreto");
               }
 
               if (error.code == "ERROR_USER_NOT_FOUND") {
-                _changeButtonState(false);
+                _changeProgress(false);
                 print("Usuário Não Encontrado");
               }
             }
-            _changeButtonState(false);
+            _changeProgress(false);
           }
         },
       ),
     );
   }
 
-  void _changeButtonState(state) {
+  void _changeProgress(state) {
     setState(() {
       _isLoading = state;
     });
+  }
+
+  void _checkUser(firebaseUser) {
+    try {
+      if (firebaseUser != null && firebaseUser.email.isNotEmpty) {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => MenuStartPage()));
+        _changeProgress(false);
+        return;
+      }
+      _changeProgress(false);
+      _showAlert("Não foi possível encontrar sua conta Google");
+    } on PlatformException catch (err) {
+      print(err.details);
+      _changeProgress(false);
+      _showAlert("Erro na autenticação. Tente mais tarde");
+    }
   }
 }
