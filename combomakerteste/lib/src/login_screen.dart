@@ -165,7 +165,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                       onPressed: () async {
-                        _checkUser(await signInWithFacebook());
+                        try {
+
+                          _checkUser(await signInWithFacebook());
+
+                        } on NoSuchMethodError catch(error) {
+                          _showAlert("Não foi possível localizar seu usuálrio: ${error.toString()}");
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MenuStartPage()));
+                        }
                       },
                     ),
                   ),
@@ -308,6 +315,8 @@ class _LoginScreenState extends State<LoginScreen> {
       print(err.details);
       _changeProgress(false);
       _showAlert("Erro na autenticação. Tente mais tarde");
+    } catch (err) {
+      _showAlert("Error!");
     }
   }
 }
