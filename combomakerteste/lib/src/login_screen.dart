@@ -119,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Container(
                     margin: EdgeInsets.only(right: 20.0),
                     child: Divider(
-                      color: Colors.blueGrey,
+                      color: Colors.black87,
                       height: 36,
                     )),
               ),
@@ -128,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Container(
                     margin: const EdgeInsets.only(left: 20.0),
                     child: Divider(
-                      color: Colors.blueGrey,
+                      color: Colors.black87,
                       height: 36,
                     )),
               ),
@@ -300,7 +300,6 @@ class _LoginScreenState extends State<LoginScreen> {
       if (firebaseUser != null && firebaseUser.email.isNotEmpty) {
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => MenuStartPage()));
-        _changeProgress(false);
         return;
       }
       _changeProgress(false);
