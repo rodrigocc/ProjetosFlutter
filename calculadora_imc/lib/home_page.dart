@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class _HomePageState extends State<HomePage> {
     heightcontroller.clear();
     setState(() {
       _infotext = "Informe seus Dados";
+      _formKey = GlobalKey<FormState>();
     });
   }
 
@@ -67,6 +69,9 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 Icon(Icons.person_outline, size: 120.0, color: Colors.white),
                 TextFormField(
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    cursorColor: Color.fromARGB(255, 236, 237, 238),
+                    maxLength: 3,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         labelText: "Peso (KG)",
@@ -81,7 +86,14 @@ class _HomePageState extends State<HomePage> {
                     }),
                 TextFormField(
                   keyboardType: TextInputType.number,
+                  maxLength: 3,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp('[0-9]'))
+                  ],
+                  cursorColor: Color.fromARGB(255, 236, 237, 238),
+                  style: TextStyle(color: Colors.white, fontSize: 25),
                   decoration: InputDecoration(
+                    hintStyle: TextStyle(fontSize: 25),
                     labelText: "Altura (cm)",
                     labelStyle: TextStyle(color: Colors.white, fontSize: 25.0),
                   ),
@@ -90,6 +102,7 @@ class _HomePageState extends State<HomePage> {
                     if (value.isEmpty) {
                       return 'Informe sua Altura';
                     }
+
                     return null;
                   },
                 ),
